@@ -351,17 +351,3 @@ more granular / resolution-dependent — is a useful framework for organizing
 that discussion.
 
 ---
-
-## 9. Where to go from here
-
-- **Robustness / stability analysis.** SWANS ships (or will ship — check the
-  repository for current status) a separate suite of generic robustness and
-  stability scripts, built to assess how consistent gene signatures and
-  cluster assignments are across schemas and resolutions. These are a more
-  advanced, standalone resource and are intentionally **not** covered in
-  this tutorial — see the scripts' own documentation if you want to go
-  beyond schema selection into quantitative schema robustness.
-- **Full statistical and design rationale.** The SWANS methods manuscript
-  covers the reasoning behind default parameter choices, the six-schema
-  comparison design, and the outcome-based validation approach in more
-  depth than this tutorial.
