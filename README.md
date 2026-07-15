@@ -1,7 +1,7 @@
 <img src="SWANS_logo.png" alt="SWANS logo" width="800">
 
 SWANS (Snakemake Workflow for Analysis of Nucleotide Sequences) is a configurable
-scRNA-seq/snRNA-seq analysis pipeline built on Snakemake, Cell Ranger, and Seurat, with
+scRNA-seq/snRNA-seq analysis and reporting pipeline built on Snakemake, Cell Ranger, and Seurat, with
 multi-schema clustering comparison and collaborator-friendly interactive reporting. These
 vignettes walk through a full worked example — GSE191288 / PRJNA790856 (Wang et al. 2022,
 bilateral papillary thyroid carcinoma) — from raw data to a fully annotated,
