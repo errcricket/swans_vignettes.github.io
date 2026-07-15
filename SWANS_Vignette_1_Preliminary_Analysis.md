@@ -124,7 +124,7 @@ complete configuration used for this tutorial's PRJNA790856 run.
 
 ```yaml
 # contact (email will be sent when jobs complete)
-contact: reichenbee@chop.edu
+contact: user_name@email.com
 
 # project name (IN LOWER CASE) — determines output directory under data/endpoints/
 PROJECT: prjna790856
