@@ -34,5 +34,5 @@ optional and self-contained, but if your goal is **schema-selection assistance**
 most useful point to run it is *between* 1 and 2: after the preliminary pass has produced
 your full schema grid, but before you commit to annotating one schema and moving into
 post-annotation analysis. Vignette 1 links to it at exactly that point (end of Section
-11, "Next steps").
+12, "Next steps").
 
