@@ -332,7 +332,7 @@ validation_output/
     │           └── tables/
     │               ├── cluster_stability.csv
     │               └── celltype_stability.csv
-    ├── standard.rpca_snn_res.0.2_IP2/     # e.g. a stringent-QC variant, via --out-name
+    ├── standard.rpca_snn_res.0.2
     │   └── ...
     ├── combined_celltype_stability.csv
     └── combined_stability_facets.pdf
