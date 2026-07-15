@@ -1,0 +1,11 @@
+cluster	celltypes
+0	Follicular
+1	T_cells
+2	Pericytes
+3	Endothelial
+4	Follicular
+5	T_cells
+6	Myeloid
+7	Fibroblasts
+8	B_cells
+9	Plasma
