@@ -26,7 +26,7 @@ at a time.
 
 ## 1. What's in the toolkit
 
-| File (in scripts folder) | Role |
+| File (in `scripts` folder) | Role |
 |---|---|
 | `run_validation.sh` | Entry point. Handles everything that must happen *before* R starts: creates the output directory, sets up `R_LIBS_USER`, installs dependencies. Then hands off to `05_run_validation.R`. |
 | `install_dependencies.R` | Installs required R packages (including `scclusteval` from GitHub) into a user-writable library path. |
