@@ -5,7 +5,7 @@ layout: default
 
 # SWANS Vignettes
 <p align="center">
-<img src="SWANS_logo.png" alt="SWANS logo" width="180">
+<img src="SWANS_logo.png" alt="SWANS logo" width="400">
 </p>
 
 SWANS (Snakemake Workflow for Analysis of Nucleotide Sequences) is a configurable
