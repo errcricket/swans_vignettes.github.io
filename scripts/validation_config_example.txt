@@ -1,0 +1,27 @@
+# validation_config.txt
+# project: required, lowercase SWANS project name (matches 
+# PROJECT in prelim/post-annotation yaml). lowercased automatically if not.
+
+project=prjna790856
+
+# robustness
+# ---------------------------------------------------------
+# optional -- only needed if NOT running from SWANS home dir
+# leave commented out to use SWANS-home-dir default.
+zscore_dir=../SWANS/data/endpoints/prjna790856/analysis/report/tables
+# ---------------------------------------------------------
+
+# stability
+# ---------------------------------------------------------
+# optional -- only needed if NOT running from SWANS home dir
+# leave commented out to use SWANS-home-dir default.
+seurat_object=../SWANS/data/endpoints/prjna790856/analysis/RDS/prjna790856_analyzed_seurat_object.qs2 
+
+resolution=0.2
+normalization=sct
+integration=harmony
+#no_annotation=true
+#annotation_file=stability_annotation.txt
+# ---------------------------------------------------------
+
+steps=match,robustness,stability,combine
