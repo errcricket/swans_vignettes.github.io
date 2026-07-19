@@ -95,13 +95,13 @@ per line and no blank lines.
 
 ```text
 samples condition   path_to_starting_data
-T1L PTC co_lab/projects/data/PRJNA790856/GSM5743021_T1L/
-T1R PTC co_lab/projects/data/PRJNA790856/GSM5743022_T1R/
-T2L PTC co_lab/projects/data/PRJNA790856/GSM5743023_T2L/
-T2R PTC co_lab/projects/data/PRJNA790856/GSM5743024_T2R/
-T3L PTC co_lab/projects/data/PRJNA790856/GSM5743025_T3L/
-T3R PTC co_lab/projects/data/PRJNA790856/GSM5743026_T3R/
-NT  Normal  co_lab/projects/data/PRJNA790856/GSM5743027_NT/
+T1L PTC PRJNA790856/GSM5743021_T1L/
+T1R PTC PRJNA790856/GSM5743022_T1R/
+T2L PTC PRJNA790856/GSM5743023_T2L/
+T2R PTC PRJNA790856/GSM5743024_T2R/
+T3L PTC PRJNA790856/GSM5743025_T3L/
+T3R PTC PRJNA790856/GSM5743026_T3R/
+NT  Normal  PRJNA790856/GSM5743027_NT/
 ```
 
 Seven samples total: three patients, each with paired **L**eft and **R**ight
@@ -111,9 +111,7 @@ design referenced throughout the SWANS manuscript's validation section.
 
 Each `path_to_starting_data` entry points to the folder containing that
 sample's `features.tsv.gz`, `barcodes.tsv.gz`, and `matrix.mtx.gz`, per
-Section 3. GSM accessions are included in the folder names here purely for
-traceability back to the GEO record — SWANS itself only reads the `samples`
-column.
+Section 3. 
 
 ---
 
