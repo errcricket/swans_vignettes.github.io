@@ -233,7 +233,8 @@ A few fields worth understanding, not just copying:
   TPO for follicular cells; CD3D, CD8B for T cells; IL2RA/FOXP3 for Tregs;
   KLRB1/NCAM1/FCGR3A for NK cells; TPSAB1 for mast cells; PDGFRA for
   fibroblasts; VWF for endothelial; HIGD1B for pericytes; CD68/CD14/S100A8/
-  S100A9 for myeloid, among others). With `VISUALIZATION: dot`, SWANS
+  S100A9 for myeloid, among others). This is a text file with no header,
+  and one gene per line. With `VISUALIZATION: dot`, SWANS
   generates a dot plot of this gene panel across every schema, which is
   genuinely useful for cross-checking whether a cluster's identity holds up
   under known markers — independent of, and a good complement to, the
@@ -257,12 +258,11 @@ setting. You do not need to babysit the run — an email is sent to the
 **For reference**, on a comparably-sized 9-sample test run (a different
 project, shown here only to illustrate what the benchmarking report looks
 like), the heaviest single rule — the multi-schema Seurat analysis step —
-took roughly 4h 51m and peaked around 46.6 GB RSS. Runtime and memory will
-scale with your own dataset size, number of samples, and — notably for this
-tutorial's 42-schema sweep — how many normalization/integration/resolution
-combinations you're comparing in a single pass. Expect PRJNA790856's own
-run, with 7 resolutions instead of 3, to take meaningfully longer than that
-reference figure.
+took roughly 1h 53m and peaked around 16.6 GB RSS on 30 threads. Runtime 
+and memory will scale with your own dataset size, number of samples, and 
+— notably for this tutorial's 42-schema sweep — how many 
+normalization/integration/resolution combinations you're comparing 
+in a single pass. 
 
 If a rule fails, both the terminal output and the failure email will include
 the exact shell command that was run and the path to that rule's log file
@@ -304,7 +304,7 @@ biological signal.
 **Location:** `data/endpoints/PROJECT/analysis/report/Interactive_report.Rmd`
 
 This is the report you'll spend the most time in, since it's what lets you
-compare all 18 schemas and choose one.
+compare all 42 schemas and choose one.
 
 **Launching it:** set your R working directory to the `report/` folder, open
 `Interactive_report.Rmd` in RStudio, install the required packages if you
@@ -319,11 +319,11 @@ dplyr_1.1.4, DT_0.33, shinyfullscreen_1.1.0, shinyjs_2.1.0, shiny_1.9.0
 
 The report has three independent panels, each with its own dropdown
 selections. You can compare up to three different schemas side-by-side, or
-set two panels to the same normalization/integration and vary only
+set panels to the same normalization/integration and vary only
 resolution.
 
 **Plots.** Each panel: choose normalization (standard/sct), integration
-(cca/rpca/harmony), and resolution (0.1/0.2/0.3), and the matching UMAP
+(cca/rpca/harmony), and resolution (0.1/0.2/0.3/0.4/0.5/06/0.7), and the matching UMAP
 renders. Changing any dropdown updates that panel's UMAP; the other two
 panels are unaffected.
 
@@ -335,6 +335,10 @@ panels are unaffected.
   between one dominant cluster and its nearest neighbor (see the
   "Suggestions" note in Section 9 below)
 - **Cell counts/proportions by cluster and experimental condition**
+- **Cell cycle phase distribution.** For the selected schema, G1/S/G2M phase
+proportions are shown per experimental condition, broken down by cluster —
+useful for confirming that a cluster split isn't simply tracking cell cycle
+phase rather than a distinct cell type.
 
 Enter `-1` in the cluster number field to see all clusters; enter a specific
 cluster number to restrict the table to that cluster; an invalid positive
@@ -345,11 +349,6 @@ Clustree figure shows how cells move between clusters as resolution
 increases — this is where over-clustering becomes visually obvious (a
 cluster splitting into two children that are barely distinguishable in
 composition, for instance).
-
-**Cell cycle phase distribution.** For the selected schema, G1/S/G2M phase
-proportions are shown per experimental condition, broken down by cluster —
-useful for confirming that a cluster split isn't simply tracking cell cycle
-phase rather than a distinct cell type.
 
 ---
 
