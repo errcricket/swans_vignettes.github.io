@@ -39,6 +39,7 @@ pipeline:
 
 - `samples.sample_list`
 - `configs/prelim_configs.yaml`
+- `configs/post_annotation_configs.yaml`
 
 And your starting single-cell data — see Section 3 for the three supported
 formats.
