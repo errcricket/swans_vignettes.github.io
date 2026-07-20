@@ -67,8 +67,8 @@ base install failed.
 # validation_config.txt
 project=prjna790856
 
-zscore_dir=../SWANS/data/endpoints/prjna790856/analysis/report/tables
-seurat_object=../SWANS/data/endpoints/prjna790856/analysis/RDS/prjna790856_analyzed_seurat_object.qs2
+zscore_dir=data/endpoints/prjna790856/analysis/report/tables
+seurat_object=data/endpoints/prjna790856/analysis/RDS/prjna790856_analyzed_seurat_object.qs2
 
 resolution=0.2
 normalization=sct
