@@ -122,7 +122,7 @@ FINAL_SEURAT_INTEGRATION_METHOD: harmony
 FINAL_RESOLUTION: 0.2
 
 # relative path to the annotation file built in Section 2
-CLUSTER_ANNOTATION_FILE: gene_files/cell_annotation_prjna790856_res.0.2.txt
+CLUSTER_ANNOTATION_FILE: cell_annotation_prjna790856_res.0.2.txt
 
 # ---- trajectory analysis ----
 RUN_TRAJECTORY_ANALYSIS: y
@@ -165,13 +165,6 @@ tutorial, but it's worth knowing this option exists if your next step after
 annotation is exploring signaling between the cell types SWANS identifies —
 Follicular-to-Myeloid signaling, for instance, would be a natural next
 question for this dataset.
-
-A note on why the DGE method matters here: SWANS uses Seurat's
-`FindMarkers`/`FindAllMarkers` with a Wilcoxon rank-sum test as the default
-differential expression method — the same method Wang et al. 2022 used for
-their original analysis of this dataset. That consistency is deliberate: it
-means differences between SWANS's results and the original publication
-reflect biology or clustering resolution, not a methodological mismatch.
 
 ---
 
@@ -242,12 +235,8 @@ ranking answers "what am I most sure is real," NES ranking answers "what
 changed the most."
 
 ### Conserved genes (optional)
-Genes with consistent differential expression for a given cluster across
-experimental conditions. Note: if a cluster represents a single continuous
-population that has been split across multiple sub-clusters (see Vignette
-1, Section 9's caution on `FindAllMarkers`), conserved gene results for
-those sub-clusters are unlikely to be useful for annotation purposes — treat
-them cautiously in that scenario.
+Genes with consistent expression in a given cluster across experimental 
+conditions. 
 
 ### Z-score transformations
 Three levels of granularity: by cluster, by cluster + experimental
@@ -304,7 +293,9 @@ Wang et al. 2022 reported 8 cell types from 29,561 cells after their own QC
 filtering (feature range 201–5,000, mito <25% — the same thresholds this
 tutorial's prelim config was deliberately set to match, see Vignette 1
 Section 5): Follicular cells, T cells, Endothelial, Pericytes, B cells,
-Fibroblasts, Myeloid, Mast cells.
+Fibroblasts, Myeloid, Mast cells. A final note on analysis differences, 
+we used doubletFinder as an additional QC step that was not employed in
+the Wang et al. analysis. 
 
 The annotation file in Section 2 above reflects what SWANS actually
 recovered at the chosen schema (`sct`/`harmony`/res `0.2`):
