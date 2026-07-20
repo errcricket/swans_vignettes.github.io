@@ -40,6 +40,7 @@ pipeline:
 - `samples.sample_list`
 - `configs/prelim_configs.yaml`
 - `configs/post_annotation_configs.yaml`
+  - the only parameter that needs to be set: ```RUN_FINAL_ANALYSIS: n```
 
 And your starting single-cell data — see Section 3 for the three supported
 formats.
@@ -400,12 +401,20 @@ normalization, `harmony` integration, resolution `0.2` — actually recovered
   than from a dedicated cluster label — expected for a low-abundance
   population (~1.4% in Wang et al.) sharing myeloid lineage.
 
+
 In general: prefer the schema that recovers biologically expected
 populations cleanly, is stable across nearby resolutions in the Clustree
 view, and doesn't require excessive resolution to separate rare populations
 you don't specifically need resolved. Chapter/Section 2.4 of the SWANS
 manuscript ("Guidance for Schema Selection") covers the full reasoning
-behind this in more depth.
+behind this in more depth. Also note that the QC filtering thresholds used
+here were those originally applied in the GSE191288 / PRJNA790856
+(Wang et al., 2022) study. They were retained solely to preserve
+comparability with the original study and do not reflect the quality-
+control criteria we would ordinarily apply. Using more stringent filtering
+thresholds and additional QC steps would likely alter both the resulting 
+schema and its stability.
+
 
 ---
 
@@ -418,7 +427,7 @@ behind this in more depth.
   intentionally **not** covered in this tutorial — see the scripts' own
   documentation if you want to go beyond schema selection into quantitative
   schema robustness.
-- **The SWANS methods manuscript and GitHub repo*** go in more depth than this tutorial.
+- **The SWANS methods manuscript and GitHub repo** go in more depth than this tutorial.
 
 ## 12. Next steps
 
